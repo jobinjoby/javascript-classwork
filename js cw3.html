@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Processing</title>
+</head>
+<body>
+  <script>
+    var feedback = "   I loved the FOOD and the service!   ";
+    feedback = feedback.trim();
+    feedback = feedback.toLowerCase();
+    feedback = feedback.replace("food", "ambience");
+    var position = feedback.indexOf("service");
+    var wordsArray = feedback.split(" ");
+    document.write("<b>Cleaned Feedback:</b> " + feedback + "<br>");
+    document.write("<b>Position of 'service':</b> " + position + "<br>");
+    document.write("<b>Array of Words:</b> " + wordsArray.join(", "));
+  </script>
+</body>
+</html>
+
