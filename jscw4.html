@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>small statistics widget</title>
+</head>
+
+<body>
+    <p>Math.floor(Math.random() * 100) + 1 returns a random integer between 1 and 100 
+(both included):</p>
+<p id="jo"></p>
+<p id="str"></p>
+<p id="con"></p>
+<p id="diff"></p>
+<p id = "sqr"></p>
+<p id="pie"></p>
+<p id="multi"></p>
+<script>
+    let random= document.getElementById("jo").innerHTML =
+Math.floor(Math.random() * 100) + 1;
+let string= "75";
+document.getElementById("str").innerHTML='userscore is'+" " +string;
+ let convert =Number(string)
+ document.getElementById("con").innerHTML='converting userscore to a number'+ ' '+convert;
+ let diff = Number(random-convert)
+document.getElementById("diff").innerHTML='diffrence between random number and user score is'+' '+ diff;
+document.getElementById('sqr').innerHTML="rounded square root is"+" "+ Math.round(Math.sqrt(convert));
+document.getElementById("pie").innerHTML="constant pie"+ " "+Math.PI;
+var mul="50" *2;
+document.getElementById("multi").innerHTML="implicit conversion"+" "+ mul;
+
+
+
+
+
+
+</script>
+</body>
+</html>
