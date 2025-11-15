@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Return Check</title>
+</head>
+<body>
+
+<button onclick="onlineStore()">Check Return</button>
+<p id="jo"></p>
+<p id="result"></p>
+
+<script>
+function onlineStore() {
+    let order = {
+        itemName: "Smart Watch",
+        isDelivered: true,
+        daysSinceDelivery: 5
+    };
+
+    document.getElementById("jo").innerHTML =
+        "itemName exists: " + ("itemName" in order);
+
+   
+    let message =
+        (order.isDelivered && order.daysSinceDelivery <= 7)
+        ? "Eligible for Return"
+        : "Return Period Expired";
+
+    document.getElementById("result").innerText = message;
+
+   
+    delete order.daysSinceDelivery;
+
+    console.log(order);
+}
+</script>
+
+</body>
+</html>
