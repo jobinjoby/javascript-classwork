@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grocery store</title>
+</head>
+<body>
+    <p id="jo"></p>
+    <p id="man"></p>
+    <p id="demo"></p>
+    <p id="qwe"></p>
+    <p id="zx"></p>
+    <p id="fl"></p>
+    <p id="upd"></p>
+
+    <script>
+        var arr1, arr2, flen, text, i;
+
+        arr1 = ["apple", "orange", "mango", "grapes"];
+        arr2 = [55, 30, 35, 80];
+
+        document.getElementById("jo").innerHTML = "Product: " + arr1[0] + " - Price: " + arr2[0];
+        document.getElementById("man").innerHTML = "Product: " + arr1[1] + " - Price: " + arr2[1];
+        document.getElementById("demo").innerHTML = "Product: " + arr1[2] + " - Price: " + arr2[2];
+        document.getElementById("qwe").innerHTML = "Product: " + arr1[3] + " - Price: " + arr2[3];
+
+        
+        flen = arr1.length;
+        text = "<ul>";
+
+        for (i = 0; i < flen; i++) {
+            text += "<li>Product: " + arr1[i] + " - Price: " + arr2[i] + "</li>";
+        }
+
+        text += "</ul>";
+        document.getElementById("zx").innerHTML = text;
+
+        var fil=arr2.filter(myFunction);
+        document.getElementById("fl").innerHTML="<b>product with>50 </b>"+" - " +fil;
+        function myFunction(value, index, array) {
+  return value > 50;
+
+        }
+       arr1.push("watermelon");
+        arr2.push(80);
+        
+        var updated = "<b>Updated Product List:</b><br>";
+        for (i = 0; i < arr1.length; i++) {
+            updated += "Product: " + arr1[i] + " - Price: " + arr2[i] + "<br>";
+        }
+
+        document.getElementById("upd").innerHTML = updated
+    </script>
+</body>
+</html>
