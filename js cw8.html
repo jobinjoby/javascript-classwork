@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple calculator for a grocery store</title>
+</head>
+<body>
+
+<p>Code 1 is for "Apple" – ₹30 per item</p>
+<p>Code 2 is for "Banana" – ₹10 per item</p>
+<p>Code 3 is for "Mango" – ₹50 per item</p>
+<p id="output"></p>
+<script>
+    let text="";
+
+for (let i = 0; i < 5; i++) {
+
+    let cd1 = parseInt(prompt("Enter the product code (1-3): "));
+    let q1  = parseInt(prompt("Enter the quantity: "));
+
+    let price = 0;
+    let itemName = "";
+
+  
+    switch (cd1) {
+
+        case 1:
+            itemName = "Apple";
+            price = 30;
+            break;
+
+        case 2:
+            itemName = "Banana";
+            price = 10;
+            break;
+
+        case 3:
+            itemName = "Mango";
+            price = 50;
+            break;
+
+        default:
+            alert("Invalid product code! Skipping...");
+            i--;      
+            continue;  
+    }
+    let total = price * q1;
+    let message = "";
+if (total > 100) {
+        message = "High purchase";
+    } else {
+        message = "Normal purchase";
+    }
+    
+text += `${itemName} x ${q1} = ₹${total} (${message}) <br>`;
+}
+
+document.getElementById("output").innerHTML = text;
+
+
+</script>
+</body>
+</html>
