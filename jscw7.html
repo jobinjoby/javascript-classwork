@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+
+<body>
+  <h3>Create an object named friend with properties</h3>
+  <p id="demo"></p>
+  <script>
+const friend = {
+  name: "John",
+  birthDate: "1999-07-05"
+};
+
+function getBirthdayDetails(friend) {
+  const birthDate = new Date(friend.birthDate);
+  const today = new Date();
+
+  const year = birthDate.getFullYear();
+  const monthName = birthDate.toLocaleString('default', { month: 'long' });
+  const day = birthDate.getDate();
+
+  let age = today.getFullYear() - year;
+  const hasHadBirthdayThisYear =
+    today.getMonth() > birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() && today.getDate() >= day);
+  if (!hasHadBirthdayThisYear) {
+    age--;
+  }
+
+  document.getElementById("demo").innerHTML=(${friend.name} was born on ${day} ${monthName}, ${year} and is ${age} years old.);
+}
+
+getBirthdayDetails(friend);
+  </script>
+</body>
+</html>
